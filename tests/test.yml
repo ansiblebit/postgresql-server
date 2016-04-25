@@ -10,7 +10,7 @@
     macports_selfupdate: no
     macports_upgrade_outdated: no
 
-    postgresql_version: 9.5.2
+    postgresql_version: '9.5'
     postgresql_set_default: yes
     postgresql_users:
       - steenzout
