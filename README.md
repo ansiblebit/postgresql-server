@@ -1,10 +1,10 @@
 # PostgreSQL server
 
-[![License](https://img.shields.io/badge/license-New%20BSD-blue.svg?style=flat)](https://raw.githubusercontent.com/ansiblebit/postgresql/master/LICENSE)
+[![License](https://img.shields.io/badge/license-New%20BSD-blue.svg?style=flat)](https://raw.githubusercontent.com/ansiblebit/postgresql_server/master/LICENSE)
 
 [![Platform](http://img.shields.io/badge/platform-macosx-000000.svg?style=flat)](#)
 
-[![Project Stats](https://www.openhub.net/p/ansiblebit-postgresql/widgets/project_thin_badge.gif)](https://www.openhub.net/p/ansiblebit-postgresql/)
+[![Project Stats](https://www.openhub.net/p/ansiblebit-postgresql-server/widgets/project_thin_badge.gif)](https://www.openhub.net/p/ansiblebit-postgresql-server/)
 
 Ansile role to setup [PostgreSQL][postgresql] server on OSX.
 
@@ -48,7 +48,7 @@ it may be a good idea to mention in this section that the boto package is requir
         macports_selfupdate: no
         macports_upgrade_outdated: no
 
-        postgresql_version: 9.5
+        postgresql_version: '9.5'
         postgresql_set_default: yes
         postgresql_users:
           - steenzout
