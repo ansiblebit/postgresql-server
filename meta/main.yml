@@ -11,9 +11,6 @@ galaxy_info:
   min_ansible_version: 1.9.4
   platforms:
     - name: MacOSX
-      versions:
-        - 10.11
-        - 10.10
   galaxy_tags:
     - database
 dependencies:
