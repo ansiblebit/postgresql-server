@@ -5,10 +5,10 @@
 #
 galaxy_info:
   author: Pedro Salgado
-  description: Role for PostgreSQL on MacOSX.
+  description: Role for PostgreSQL server on MacOSX.
   company: ansiblebit.org
   license: BSD
-  min_ansible_version: 1.7.2
+  min_ansible_version: 1.9.4
   platforms:
     - name: MacOSX
       versions:
@@ -18,3 +18,4 @@ galaxy_info:
     - database
 dependencies:
   - role: ansiblebit.macports
+    when: (ansible_distribution | lower == 'darwin') or (ansible_distribution | lower == 'macosx')
