@@ -30,8 +30,8 @@ it may be a good idea to mention in this section that the boto package is requir
 
 ## Role Variables
 
-- **postgresql_set_default: flag to indicate if the current version should be set as default.
-- **postgresql_users: a list of users to setup their environment with PostgreSQL aliases.
+- **postgresql_set_default**: flag to indicate if the current version should be set as default.
+- **postgresql_users**: a list of users to setup their environment with PostgreSQL aliases.
 - **postgresql_version**: the PostgreSQL version to be installed (major and minor version number must be specified).
 
 
