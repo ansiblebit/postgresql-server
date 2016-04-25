@@ -1,5 +1,5 @@
 ---
-# file: primogen/tasks/main.yml
+# file: postgresql/tasks/main.yml
 #
 # tasks file
 #
@@ -11,6 +11,12 @@
 - include: validation.yml
   tags: validation
 
-- debug: >
-    msg="invoked"
+- name: include OS family/distribution specific tasks
+  include: "{{ item }}"
+  with_first_found:
+    - "{{ ansible_os_family | lower }}/{{ ansible_distribution | lower }}.yml"
+    - "{{ ansible_os_family | lower }}/main.yml"
+  tags: installation
 
+- include: configuration.yml
+  tags: configuration

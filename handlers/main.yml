@@ -1,5 +1,17 @@
 ---
-# file: primogen/handlers/main.yml
+# file: postgresql/handlers/main.yml
 #
 # handlers file
 #
+
+- name: macosx | start postgresql
+  command: "/opt/local/etc/LaunchDaemons/org.macports.postgresql{{ postgresql_major_version }}{{ postgresql_minor_version }}-server/postgresql{{ postgresql_major_version }}{{ postgresql_minor_version }}-server.wrapper start"
+  become: yes
+
+- name: macosx | stop postgresql
+  command: "/opt/local/etc/LaunchDaemons/org.macports.postgresql{{ postgresql_major_version }}{{ postgresql_minor_version }}-server/postgresql{{ postgresql_major_version }}{{ postgresql_minor_version }}-server.wrapper stop"
+  become: yes
+
+- name: macosx | restart postgresql
+  command: "/opt/local/etc/LaunchDaemons/org.macports.postgresql{{ postgresql_major_version }}{{ postgresql_minor_version }}-server/postgresql{{ postgresql_major_version }}{{ postgresql_minor_version }}-server.wrapper restart"
+  become: yes

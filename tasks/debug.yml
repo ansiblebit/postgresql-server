@@ -1,5 +1,5 @@
 ---
-# file: tasks/debug.yml
+# file: postgresql/tasks/debug.yml
 #
 # debug tasks.
 #
@@ -9,4 +9,9 @@
   when: "{{ item }} is defined"
   with_items:
     - debug
-
+    - ansible_os_family
+    - ansible_os_distribution
+    - postgresql_version
+    - postgresql_major_version
+    - postgresql_minor_version
+    - postgresql_users

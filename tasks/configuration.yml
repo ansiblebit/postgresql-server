@@ -1,0 +1,25 @@
+---
+# file: postgresql/tasks/configuration.yml
+#
+# configuration tasks.
+#
+
+- name: setup PostgreSQL profile for users
+  template:
+    src=home/user/.profile_postgresql.j2
+    dest="~{{ item }}/.profile_postgresql{{ postgresql_major_version }}{{ postgresql_minor_version }}"
+    owner="{{ item }}"
+    group="staff"
+    mode=0644
+  become: yes
+  with_items: "{{ postgresql_users }}"
+
+- name: ensure user environment gets load with PostgreSQL variables
+  lineinfile:
+    line="source ~/.profile_postgresql{{ postgresql_major_version }}{{ postgresql_minor_version }}"
+    dest="~{{ item }}/.profile"
+    owner="{{ item }}"
+    group="staff"
+    mode=0644
+  become: yes
+  with_items: "{{ postgresql_users }}"

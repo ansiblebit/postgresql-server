@@ -1,5 +1,5 @@
 ---
-# file: primogen/tests/vars/main.yml
+# file: postgresql/tests/vars/main.yml
 #
 
 vagrant:

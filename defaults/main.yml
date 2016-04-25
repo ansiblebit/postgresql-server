@@ -1,5 +1,14 @@
 ---
-# file: primogen/defaults/main.yml
+# file: postgresql/defaults/main.yml
 #
 # defaults file
 #
+
+postgresql_set_default: yes
+
+postgresql_users:
+  - "{{ ansible_env.USER }}"
+
+postgresql_version: 9.5
+postgresql_major_version: "{{ postgresql_version.split('.')[0] }}"
+postgresql_minor_version: "{{ postgresql_version .split('.')[1] }}"

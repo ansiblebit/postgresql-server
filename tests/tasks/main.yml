@@ -1,5 +1,5 @@
 ---
-# file: primogen/tests/tasks
+# file: postgresql/tests/tasks
 #
 # Test tasks to verify role execution.
 #

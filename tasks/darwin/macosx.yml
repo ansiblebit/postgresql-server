@@ -1,0 +1,21 @@
+---
+# file: postgresql/tasks/darwin/macosx.yml
+#
+# PostgreSQL tasks for Darwin/MacOSX.
+#
+
+- name: ensure the PostgreSQL server port is installed
+  macports:
+    name="{{ item }}"
+    state=present
+  become: yes
+  notify: macosx | start postgresql
+  with_items:
+    - "postgresql{{ postgresql_major_version }}{{ postgresql_minor_version }}-server"
+    - postgresql_select
+
+- name: ensure this version is the default PostgreSQL version
+  command: "sudo port select --set postgresql postgresql{{ postgresql_major_version }}{{ postgresql_minor_version }}"
+  when: postgresql_set_default
+  notify: macosx | start postgresql
+  become: yes

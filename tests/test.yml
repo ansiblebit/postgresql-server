@@ -1,5 +1,5 @@
 ---
-# file: primogen/tests/test.yml
+# file: postgresql/tests/test.yml
 
 - name: tests play
   hosts: "{{ vagrant_box }}"
@@ -7,9 +7,18 @@
   vars:
     debug: yes
 
+    macports_selfupdate: no
+    macports_upgrade_outdated: no
+
+    postgresql_version: 9.5.2
+    postgresql_set_default: yes
+    postgresql_users:
+      - steenzout
+
+
   roles:
-    - role: primogen
+    - role: postgresql_server
+      tags: [ database, postgresql, server ]
 
     - role: tests
       tags: test
-

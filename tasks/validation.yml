@@ -1,5 +1,5 @@
 ---
-# file: primogen/tasks/validation.yml
+# file: postgresql/tasks/validation.yml
 #
 # validation tasks.
 #
@@ -9,5 +9,6 @@
     msg="{{ item }} is a mandatory variable"
   when: "{{ item }} is not defined"
   with_items:
-    - debug
-
+    - postgresql_version
+    - postgresql_major_version
+    - postgresql_minor_version
